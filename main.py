@@ -21,15 +21,7 @@ for submission in submissions:
     i += 1
     # Uncomment the next line to delete the post
     submission.delete()
-    
-    # Uncomment the next lines to edit the post
-    # submission.edit("This post has been anonymized.")
-
     print(f"Processed post: {submission.title}")
-
-    # Pause to avoid hitting rate limits
-    # time.sleep(2)
-    # break
 
 # https://praw.readthedocs.io/en/stable/code_overview/other/listinggenerator.html 
 # Use NONE to get all of them.  In my case still may need to run this more than once. 
@@ -38,9 +30,6 @@ for comment in comments:
             print(f"Deleting comment {comment.id}")
             print(f"Deleting comment {comment.body}")
             comment.delete()
-
-            # to avoid rate limit errors, wait for 1 second between each delete operation
-            # time.sleep(1)
 
 comments = list(user.comments.top(limit=None))
 for comment in comments:
