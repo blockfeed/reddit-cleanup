@@ -1,6 +1,5 @@
 import json
 import praw
-import time
 
 # Initialize PRAW with your credentials
 secrets = json.load(open("secrets.json"))
@@ -15,8 +14,6 @@ reddit = praw.Reddit(
 # Fetch your submissions
 user = reddit.user.me()
 submissions = user.submissions.new(limit=None)
-
-# TODO: comments https://github.com/JosemyDuarte/reddit-cleaner/blob/master/main.py
 
 # Loop through each submission
 i = 0
@@ -35,7 +32,7 @@ for submission in submissions:
     # break
 
 # https://praw.readthedocs.io/en/stable/code_overview/other/listinggenerator.html 
-# Use NONE to get all of them.  But may need to run this more than once. 
+# Use NONE to get all of them.  In my case still may need to run this more than once. 
 comments = list(user.comments.new(limit=None))
 for comment in comments:
             print(f"Deleting comment {comment.id}")
