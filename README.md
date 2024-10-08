@@ -5,9 +5,6 @@ This Python script automates the deletion of your Reddit submissions and comment
 ## Features
 - Delete **all Reddit submissions (posts)** from your account.
 - Delete **all Reddit comments** from your account.
-- Anonymize posts instead of deleting them, if preferred.
-- Avoids Reddit’s rate limit with optional pauses between deletions.
-- Ensures cleanup of your submissions and comments efficiently.
 
 ## Installation
 
